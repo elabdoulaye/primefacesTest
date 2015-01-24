@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <title>test app</title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+            <h:outputStylesheet name="css/dashboard.css" />
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+        </f:facet>
+
+        <f:facet name="last">
+            <h:outputStylesheet name="css/font-awesome.css" />
+        </f:facet>
+
+    </h:head>
+
+    <h:body>
+
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" >Tonux admin</a> 
+                </div>
+                <div style="color: white;
+                     padding: 15px 50px 5px 50px;
+                     float: right;
+                     font-size: 16px;"> Dernier accés : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-warning square-btn-adjust">Déconnexion</a> </div>
+            </nav>   
+            <!-- /. NAV TOP  -->
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+                        <li class="text-center">
+                            <h:graphicImage library="images" name="find_user.png" class="user-image img-responsive" />
+
+                        </li>
+
+
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a  href="#"><i class="fa fa-desktop fa-3x"></i> Element 1</a>
+                        </li>
+                        <li>
+                            <a  href="#"><i class="fa fa-qrcode fa-3x"></i> Elements 2</a>
+                        </li>
+                        <li  >
+                            <a class="active-menu"   href="chart.html" ><i class="fa fa-bar-chart-o fa-3x"></i> Tonux Charts</a>
+                        </li>	
+                        <li  >
+                            <a  href="#"><i class="fa fa-table fa-3x"></i> Elements 3</a>
+                        </li>
+                        <li  >
+                            <a  href="#"><i class="fa fa-edit fa-3x"></i> Elements 4 </a>
+                        </li>				
+                        <li  >
+                            <a   href="#"><i class="fa fa-bolt fa-3x"></i> Elements 5</a>
+                        </li>	
+                        <li  >
+                            <a   href="#"><i class="fa fa-laptop fa-3x"></i> Elements 6</a>
+                        </li>	
+
+
+                        <li  >
+                            <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Elements </a>
+                        </li>	
+                    </ul>
+
+                </div>
+
+            </nav>  
+            <!-- /. NAV SIDE  -->
+            <div id="page-wrapper" >
+                <div id="page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <!-- /. ROW  -->
+                    <hr />
+
+                    <div class="row"> 
+
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">                     
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Bar Chart Example
+                                </div>
+                                <div class="panel-body">
+                                    <div >
+
+                                        <p:chart type="line" model="#{chartView.areaModel}" style="height:300px" />
+                                    </div>
+                                </div>
+                            </div>            
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">                     
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Line Chart Example
+                                </div>
+                                <div class="panel-body">
+                                    <div >
+
+                                        <p:chart type="line" model="#{beanLine.model}"/>
+                                    </div>
+                                </div>
+                            </div>            
+                        </div> 
+
+                    </div>
+                    <!-- /. ROW  -->
+                    <div class="row">                     
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">                     
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Bar Chart Example
+                                </div>
+                                <div class="panel-body">
+                                    <div >
+                                        <p:chart type="bar" model="#{managedBean.model}" />
+                                    </div>
+                                </div>
+                            </div>            
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">                     
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Line Chart Example
+                                </div>
+                                <div class="panel-body">
+                                    <div >
+                                        <p:chart type="bubble" model="#{bubbleBean.model}" />
+                                    </div>
+                                </div>
+                            </div>            
+                        </div> 
+
+                    </div>
+
+                    <f:view>
+
+
+                        <h2 > Tableaux</h2>   
+                        <h5>Affichage tableau </h5>
+                        <!--                        <p:button value="test" class="btn btn-lg btn-warning square-btn-adjust"/>-->
+
+                        <p:dataTable var="car"
+                                     id="cars"
+                                     paginator="true"
+                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     rowsPerPageTemplate="5,10,20,"
+                                     value="#{dtBasicView.cars}" tableStyleClass="table table-hover">
+
+                            <p:column headerText="Id" >
+                                <h:outputText value="#{car.model}" />
+                            </p:column>
+
+                            <p:column headerText="Year">
+                                <h:outputText value="#{car.year}" />
+                            </p:column>
+
+                            <p:column headerText="Brand">
+                                <h:outputText value="#{car.manufacturer}" />
+                            </p:column>
+
+                            <p:column headerText="Color">
+                                <h:outputText value="#{car.color}" />
+                            </p:column>
+
+                            <f:facet name="header" >
+                                List of Cars
+                                <p:commandButton id="toggler" type="button" value="Columns"
+                                                 style="float:right" icon="ui-icon-calculator" />
+                                <p:columnToggler datasource="cars" trigger="toggler" />
+                            </f:facet>
+
+                            <p:blockUI block="cars" trigger="dataTable">
+                                LOADING<br />
+                                <p:graphicImage value="/images/ajax-loader.gif"/>
+                            </p:blockUI>
+
+                        </p:dataTable>
+
+                    </f:view>
+                    <!-- /. ROW  -->
+                </div>
+                <!-- /. PAGE INNER  -->
+            </div>
+            <!-- /. PAGE WRAPPER  -->
+        </div>
+
+    </h:body>
+</html>
